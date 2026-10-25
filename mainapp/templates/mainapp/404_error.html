@@ -1,0 +1,11 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}Page Not Found{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1>404 - Page Not Found</h1>
+    <p>Sorry, the page or bioreactor unit you are looking for does not exist.</p>
+    <a href="{% url 'home' %}" class="btn btn-success">Back to Homepage</a>
+</div>
+{% endblock %}
