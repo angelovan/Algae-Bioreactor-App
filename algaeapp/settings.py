@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainapp',
     'bioreactors',
-    'observations',
+    'feeding',
 ]
 
 MIDDLEWARE = [

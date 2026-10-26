@@ -30,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainapp.urls')),
     path('bioreactors/', include('bioreactors.urls')),
-    path('observations/', include('observations.urls')),
+    path('feeding/', include('feeding.urls')),
 ]
 
 if settings.DEBUG:

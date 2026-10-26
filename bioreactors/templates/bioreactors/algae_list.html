@@ -1,0 +1,46 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}Algae Strains{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Managed Algae Strains</h2>
+        <div>
+            <a href="{% url 'algae_create' %}" class="btn btn-success">Add New Algae Strain</a>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for algae in algae_list %}
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">{{ algae.name }}</h5>
+                        <p class="card-text text-muted small">{{ algae.description }}</p>
+                        <ul class="list-unstyled mb-3">
+                            <li><strong>Optimal Temp:</strong> {{ algae.optimal_temp }}°C</li>
+                            <li><strong>Target pH:</strong> {{ algae.target_ph }}</li>
+                            <li><strong>Feed Interval:</strong> {{ algae.feed_interval_days }} days</li>
+                        </ul>
+
+                        <div class="mt-auto">
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between">
+                                <a href="{% url 'algae_update' algae.pk %}" class="btn btn-sm btn-outline-warning">Edit</a>
+                                <a href="{% url 'algae_delete' algae.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning text-center">
+                    No algae strains registered yet. Click <strong>"Add New Algae Strain"</strong> above to create one!
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

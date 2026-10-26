@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}Add Feeding Record{% endblock %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 600px;">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Add Feeding & Observation Record</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="submit" class="btn btn-success px-4">Save Record</button>
+                    <a href="{% url 'feed_list' %}" class="btn btn-secondary px-4">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

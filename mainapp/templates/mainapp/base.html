@@ -11,12 +11,20 @@
     <div class="container mt-4">
         <h1 class="text-success fw-bold">Algae Bioreactor STEM Lab</h1>
 
-        <ul class="nav nav-pills my-3">
+        <ul class="nav nav-pills my-3 align-items-center">
             <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'bioreactor_list' %}">Bioreactors</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'bioreactor_create' %}">New Bioreactor</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'observation_dashboard' %}">Lab Logs</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'log_create' %}">Add Log</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'bioreactor_list' %}">Browse All Bioreactors</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'algae_list' %}">Algae Strains</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'equipment_list' %}">Equipment</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'feed_list' %}">Feeding Schedules</a></li>
+
+            <li class="nav-item dropdown ms-2">
+                <a class="nav-link dropdown-toggle bg-light text-dark border" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Quick Links</a>
+                <ul class="dropdown-menu shadow">
+                    <li><a class="dropdown-item" href="{% url 'bioreactor_create' %}">Register a new bioreactor</a></li>
+                    <li><a class="dropdown-item" href="{% url 'equipment_create' %}">Add new equipment</a></li>
+                </ul>
+            </li>
         </ul>
         <hr>
     </div>
@@ -26,10 +34,11 @@
         {% endblock %}
     </div>
 
-
     <div class="container text-center text-muted py-4">
         <hr>
         <p>&copy; 2026 School STEM Cabinet - Algae Bioreactor Project</p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

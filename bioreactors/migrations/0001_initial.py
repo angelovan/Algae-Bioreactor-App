@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 ('location', models.CharField(max_length=100, verbose_name='Cabinet Location')),
                 ('setup_date', models.DateField(default=django.utils.timezone.now, verbose_name='Setup Date')),
                 ('progress_photo', models.FileField(blank=True, null=True, upload_to='bioreactor_files/', verbose_name='Progress Photo')),
-                ('observations', models.TextField(blank=True, null=True, verbose_name='Student Observation Notes')),
+                ('feeding', models.TextField(blank=True, null=True, verbose_name='Student Observation Notes')),
                 ('species', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='bioreactors', to='bioreactors.algaespecies', verbose_name='Selected Algae Type')),
                 ('equipment', models.ManyToManyField(related_name='bioreactors', to='bioreactors.equipment', verbose_name='Installed Equipment')),
             ],

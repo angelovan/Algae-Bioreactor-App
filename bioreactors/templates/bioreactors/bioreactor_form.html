@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}Manage Bioreactor - AlgaeLab{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">Bioreactor Form</h3>
+            </div>
+            <div class="card-body">
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'bioreactor_list' %}" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-success">Save Unit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
