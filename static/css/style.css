@@ -1,0 +1,100 @@
+body {
+    background-color: #B8D8C2;
+    font-family: Calibri, sans-serif;
+    color: #2a6f62;
+}
+
+header {
+    font-family: Calibri, sans-serif;
+    color: #2a6f62;
+    background-color: #f7f3e8;
+    padding: 1.5rem;
+}
+
+.lab-title {
+    font-family: Calibri, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #2a6f62;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.navbar-bioreactor {
+    background-color: #3E7F6B;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+}
+
+.navbar-bioreactor .navbar-nav .nav-link {
+    color: #f7f3e8;
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+}
+
+.navbar-bioreactor .navbar-nav .nav-link:hover {
+    color: #B8D8C2;
+}
+
+.navbar-bioreactor .nav-link-button {
+    background-color: #2a6f62;
+    color: #f7f3e8;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.navbar-bioreactor .nav-link-button:hover {
+    background-color: #1f5247;
+    color: #B8D8C2;
+}
+
+.main-container {
+    background-color: #f7f3e8;
+    min-height: 50vh;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+}
+
+.main-container h2 {
+    font-weight: bold;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+footer {
+    background-color: #3E7F6B;
+    font-family: Calibri, sans-serif;
+    color: #f7f3e8;
+    text-align: center;
+    font-size: 12px;
+    padding: 0.5rem 0;
+    border-top: 4px;
+    margin-top: 4rem;
+}
+
+.bg-bioreactor-header {
+    background-color: #3E7F6B;
+}
+
+.text-cream {
+    color: #f7f3e8;
+}
+
+.bg-cream {
+    background-color: #f7f3e8;
+    border-color: #d8ceb8 !important;
+}
+
+.btn-bioreactor-action {
+    background-color: #f7f3e8;
+    color: #2a6f62;
+    border: none;
+}
+
+.btn-bioreactor-action:hover {
+    background-color: #B8D8C2;
+    color: #2a6f62;
+}

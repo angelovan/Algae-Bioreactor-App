@@ -3,10 +3,10 @@
 {% block title %}Feeding Schedules{% endblock %}
 
 {% block content %}
-<div class="container mt-4" style="max-width: 900px;">
+<div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>Nutrient Feeding Schedules</h2>
-        <a href="{% url 'feed_create' %}" class="btn btn-primary">+ Add New Feed Record</a>
+        <a href="{% url 'feed_create' %}" class="btn btn-primary bg-success text-white">Add New Feed Record</a>
     </div>
 
     {% if feeds %}
@@ -36,7 +36,7 @@
                                 {% if feed.completed_date %}
                                     <span class="badge bg-success">Completed</span>
                                 {% else %}
-                                    <span class="badge bg-warning text-dark">Pending</span>
+                                    <span class="badge bg-warning-subtle text-dark">Pending</span>
                                 {% endif %}
                             </td>
                             <td class="text-end">
@@ -49,14 +49,13 @@
             </div>
         </div>
     {% else %}
-        <div class="alert alert-info text-center py-4">
-            <p class="mb-2">No feeding records found.</p>
-            <a href="{% url 'feed_create' %}" class="btn btn-sm btn-primary">Create your first feed record</a>
+        <div class="alert alert-warning text-center py-4">
+            No feeding records found. Click <strong>"Add New Feed Record"</strong> above to document the first feeding of your new bioreactor unit.
         </div>
     {% endif %}
 
     <div class="mt-4">
-        <a href="{% url 'bioreactor_list' %}" class="btn btn-secondary">← Back to Bioreactors</a>
+        <a href="{% url 'bioreactor_list' %}" class="btn btn-secondary bg-success-subtle text-black fw-bold">← Back to Bioreactors</a>
     </div>
 </div>
 {% endblock %}

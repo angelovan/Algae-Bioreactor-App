@@ -5,8 +5,8 @@
 {% block content %}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>🔬 Managed Bioreactor Units</h2>
-        <a href="{% url 'bioreactor_create' %}" class="btn btn-success">+ New Bioreactor</a>
+        <h2>Managed Bioreactor Units</h2>
+        <a href="{% url 'bioreactor_create' %}" class="btn btn-success">New Bioreactor</a>
     </div>
 
     <div class="row">
@@ -16,7 +16,11 @@
                     <div class="card-body">
                         <h5 class="card-title text-primary">{{ bioreactor.name }}</h5>
                         <p class="card-text text-muted small">Location: {{ bioreactor.location }}</p>
-                        <p class="card-text"><strong>Strain:</strong> {{ bioreactor.algae_species.name }}</p>
+                        <p class="card-text"><strong>Algae Strain:</strong> {{ bioreactor.algae_species.name }}</p>
+                        <p class="card-text"><strong>Installed Equipment:</strong> {{ bioreactor.equipment.all|join:", " }}</p>
+                        <p class="card-text"><strong>Setup Date:</strong> {{ bioreactor.setup_date }}</p>
+
+
                         <hr>
 
                         <div class="d-flex justify-content-between">
@@ -29,8 +33,8 @@
             </div>
         {% empty %}
             <div class="col-12">
-                <div class="alert alert-info text-center">
-                    No bioreactor units created yet. Click <strong>"+ New Bioreactor"</strong> above to get started.
+                <div class="alert alert-warning text-center">
+                    No bioreactor units created yet. Click <strong>"Add New Bioreactor"</strong> above to get started.
                 </div>
             </div>
         {% endfor %}

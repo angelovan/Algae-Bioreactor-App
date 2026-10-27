@@ -17,7 +17,7 @@ class AlgaeSpecies(models.Model):
       verbose_name='Strain Name',
   )
   feed_interval_days = models.IntegerField(
-      default=30, verbose_name='Nutrient Feed Interval (Days)'
+      default=7, verbose_name='Nutrient Feed Interval (Days)'
   )
   optimal_temp = models.FloatField(
       default=25.0, verbose_name='Optimal Temperature (°C)'
@@ -51,8 +51,8 @@ class BioreactorUnit(models.Model):
     equipment = models.ManyToManyField(
         Equipment, related_name='bioreactors', verbose_name='Installed Equipment'
     )
-    setup_date = models.DateTimeField(
-        default=timezone.now, verbose_name='Setup Date'
+    setup_date = models.DateField(
+        default=timezone.localdate, verbose_name='Setup Date'
     )
     progress_photo = models.FileField(
         upload_to='bioreactor_files/',
